@@ -8,8 +8,9 @@ It is not related with Java, was named "javascript" just for marketing.
 
 * Variables and Constants
 * Data types
-* Scope
+* Functions
 * Flow control
+* Scope
 * Arrays & objects
 
 ### Variables
@@ -25,7 +26,7 @@ let myVar = 4;
 
 Can not change the value during the execution
 ```
-const MY_CONST = 'something';
+const MY_CONST = 'something';   
 ```
 
 ### Data types
@@ -64,4 +65,25 @@ Some methods for array manipulation
 ```
 // myArray.shift();
 myArray = myArray.slice(1);
+```
+
+### Functions
+
+Functions can return or not values.  
+JS have named functions
+
+```
+function sum(x,y) {
+    return x + y;
+}
+```
+
+The functions can be assigned to a variable and use it.
+
+```
+const myFunc = function sum(x,y) {
+    return x + y;
+}
+
+myFunc();
 ```
