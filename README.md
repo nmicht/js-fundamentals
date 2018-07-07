@@ -9,6 +9,7 @@ It is not related with Java, was named "javascript" just for marketing.
 * Variables and Constants
 * Data types
 * Functions
+* Control structures
 * Flow control
 * Scope
 * Arrays & objects
@@ -87,3 +88,56 @@ const myFunc = function sum(x,y) {
 
 myFunc();
 ```
+
+### Conditionals
+
+Single conditional
+```
+let status;
+if ( temperature > 25 ) {
+    status = 'hot';
+}
+```
+
+Double conditional
+```
+let status;
+if ( temperature > 25 ) {
+    status = 'hot';
+} else {
+    status = 'cold'
+}
+```
+Ternary
+```
+let status =  temperature > 25 ? 'hot' : 'cold';
+```
+Switch
+```
+let option;
+
+switch(option) {
+    case 1:
+        console.log('something');
+        break;
+    case 2:
+        console.log('something else');
+        break;      
+    default:
+        console.log('default');
+}
+```
+
+### Operators
+
+### Scope
+
+There is global, function and block scope.
+
+### Objects
+
+### Arrow functions
+
+Help to avoid the mess to access `this`
+
+In arrow functions, `this` is the function itself, and not the `this` from the parent object.
