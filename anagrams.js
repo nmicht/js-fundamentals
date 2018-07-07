@@ -55,3 +55,64 @@ function secondApproach(list) {
     }
     console.log('anagrams ', anagrams);
 }
+
+function thirdApproach(list) {
+    let map = {};
+
+    list.forEach(function(word){
+        // Get the groups of anagrams with the same size
+        let lists = map[word.length];
+        let inserted = false;
+
+        if (lists === undefined) {
+            map[word.length] = [[word]];
+        } else {
+            // For each group of anagrams validate with the first element
+            for(anagram of lists){
+                if (isAnagram(anagram[0],word)) {
+                    anagram.push(word);
+                    inserted = true;
+                    break;
+                }
+            }
+            if(!inserted) {
+                map[word.length].push([word]);
+            }
+        }
+
+    })
+
+    function isAnagram(word1, word2) {
+        if (word1.length != word2.length) {
+            return false;
+        }
+
+        let cont = 0;
+        for(letter of word1){
+            if (word2.includes(letter)){
+                cont++;
+            }
+        }
+        if (cont == word1.length){
+            return true;
+        }
+
+        return false;
+    }
+
+    function printAnagrams(map) {
+        let anagrams = [];
+
+        for(key in map){
+            for(array of map[key]){
+                anagrams.push(array);
+            }
+        }
+
+        return anagrams;
+    }
+
+    console.log('anagrams', printAnagrams(map));
+}
+
+thirdApproach(list);
